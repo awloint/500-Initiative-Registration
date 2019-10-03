@@ -105,10 +105,15 @@ select[required] {
 
 .btn {
     padding: 0px 40px 0px 40px;
+    background-color: #f10f11;
 }
 
 .btn:focus {
     background-color: #eb8e1a;
+}
+
+.btn:hover {
+    background-color: black;
 }
 
 .row {
