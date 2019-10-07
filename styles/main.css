@@ -161,3 +161,7 @@ select[required] {
 #logo {
   border-radius: 50%;
 }
+
+.pac-container:after{
+    content:none !important;
+}
