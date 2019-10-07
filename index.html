@@ -77,16 +77,20 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col s6 m6 l6">
-                        <label for="dateOfBirth">Date of Birth:</label>
-                        <input type="text" class="datepicker">
+                    <div class="input-field col s12 m12 l6">
+                        <i class="material-icons prefix">date_range</i>
+                        <label for="dateOfBirth">Date of Birth</label>
+                        <input type="text" class="datepicker" name="dateOfBirth" required>
+                        <span class="helper-text" data-error="Please provide your correct Date of Birth." data-success="Great! You're good to go."></span>
+                    </div>
+                    <div class="input-field col s12 m12 l6">
+                        <input id="occupation" type="text" class="validate initialCaps" name="cccupation" required>
+                        <label for="occupation">Occupation</label>
+                        <span class="helper-text" data-error="This will help us know you better." data-success="Great! You're good to go."></span>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s12 m12 l12">
-                        <input id="Occupation" type="text" class="validate initialCaps" name="Occupation">
-                        <label for="Occupation">Occupation:</label>
-                    </div>
+
                 </div>
                 <div class="row">
                     <div class="col s12 m12 l12"> Do you belong to any organization?

@@ -48,10 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const count = document.querySelectorAll('textarea')
   M.CharacterCounter.init(count)
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const elems = document.querySelectorAll('.datepicker')
-    const instances = M.Datepicker.init(elems)
-  })
+    const dob = document.querySelectorAll('.datepicker')
+    const dateInstance = M.Datepicker.init(dob)
 
   //   Submit the form
   const form = document.querySelector('form')
