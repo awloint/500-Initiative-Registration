@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Oswald|Roboto&display=swap" rel="stylesheet">
     <!-- import font awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/fontawesome.min.css">
+    <script src="https://kit.fontawesome.com/b6bcbbd62f.js" crossorigin="anonymous"></script>
     <!--import materialize css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="styles/main.css">
@@ -80,11 +80,11 @@
                     <div class="input-field col s12 m12 l6">
                         <i class="material-icons prefix">date_range</i>
                         <label for="dateOfBirth">Date of Birth</label>
-                        <input type="text" class="datepicker" name="dateOfBirth" required>
+                        <input type="text" class="datepicker validate" name="dateOfBirth" required>
                         <span class="helper-text" data-error="Please provide your correct Date of Birth." data-success="Great! You're good to go."></span>
                     </div>
                     <div class="input-field col s12 m12 l6">
-                        <input id="occupation" type="text" class="validate initialCaps" name="cccupation" required>
+                        <input id="occupation" type="text" class="validate initialCaps" name="occupation" required>
                         <label for="occupation">Occupation</label>
                         <span class="helper-text" data-error="This will help us know you better." data-success="Great! You're good to go."></span>
                     </div>
@@ -94,12 +94,15 @@
                         <div class="switch">
                             <label>
                                 No
-                                <input type="checkbox" name="ownOrWorkForAnOrganisation">
+                                <input type="checkbox" name="ownOrWorkForAnOrganisation" class="validate" value="YES">
                                 <span class="lever"></span>
                                 Yes
                             </label>
+                            <span class="helper-text" data-error="This will help us know you better." data-success="Great! You're good to go."></span>
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix">business</i>
                         <input id="organizationName" type="text" class="validate initialCaps" name="organizationName">
@@ -111,15 +114,16 @@
                         <div class="switch">
                             <label>
                                 No
-                                <input type="checkbox" name="manageMyTravel">
+                                <input type="checkbox" name="manageMyTravel" class="validate" value="YES">
                                 <span class="lever"></span>
                                 Yes
                             </label>
                         </div>
+                    </div>
                 </div>
                 <div class="row center-align">
                     <button class="btn btn-large waves-effect waves-light top-margin bottom-margin" type="submit"
-                        name="action">Submit
+                        name="action" id="button">Submit
                         <i class="material-icons right">send</i>
                     </button>
                 </div>
@@ -143,8 +147,8 @@
     </script>
     <!--import materialize js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- load font awesome js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/js/all.min.js"></script>
+    <!-- use Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- main js -->
     <script src="scripts/main.js"></script>
 </body>

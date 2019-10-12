@@ -11,28 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearContent = document.querySelector('#year')
   yearContent.innerHTML = year
 
-  // Capitalize first letter of First Name and Last Name
-  document.querySelector('#firstName').onchange = e => {
-    let val = document.querySelector('#firstName').value
-    RegExp = /\b[a-z]/g
-
-    val = val.charAt(0).toUpperCase() + val.substr(1)
-  }
-
-  document.querySelector('#lastName').onchange = e => {
-    let val = document.querySelector('#lastName').value
-    RegExp = /\b[a-z]/g
-
-    val = val.charAt(0).toUpperCase() + val.substr(1)
-  }
-
-  document.querySelector('#email').onchange = e => {
-    let val = document.querySelector('#email').value
-    RegExp = /\b[a-z]/g
-
-    val = val.toLowerCase()
-  }
-
   // Add intl-tel-input
   window.intlTelInputGlobals.loadUtils('scripts/utils.js')
   var input = document.querySelector('#phone')
@@ -48,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const count = document.querySelectorAll('textarea')
   M.CharacterCounter.init(count)
 
-    const dob = document.querySelectorAll('.datepicker')
-    const dateInstance = M.Datepicker.init(dob)
+  const dob = document.querySelectorAll('.datepicker')
+  const dateInstance = M.Datepicker.init(dob)
 
   //   Submit the form
   const form = document.querySelector('form')
@@ -62,29 +40,35 @@ document.addEventListener('DOMContentLoaded', () => {
       e.stopPropagation()
     }
 
+    // Get the referrer value from the URL
+    const referrer = window.location.href.slice(
+      window.location.href.indexOf('?') + 1
+    )
+
     // If form doesn't have validation errors
     if (form.checkValidity() === true) {
       e.preventDefault()
 
       // change the button color and add the loading class
       //   document.querySelector('button').classList.remove('btn-danger')
-      document.querySelector('button').classList.add('btn-primary')
-      document.querySelector('button').innerHTML =
+      document.querySelector('#button').classList.add('btn-primary')
+      document.querySelector('#button').innerHTML =
         'Loading <span class="spinner"><i class="fa fa-spinner fa-spin"></i></span>'
 
       // Grab the form data
       const formdata = new FormData(form)
 
+      // Add the Referrer
+      formdata.append('referrer', referrer)
+
       // send it for processing
-      fetch('scripts/processor.php', {
-        method: 'post',
-        body: formdata
-      })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(err => {
-          console.log('The request failed', err)
+      axios
+        .post('scripts/processor.php', formdata)
+        .then(response => {
+          console.log(response)
+          console.log(response.data)
         })
+        .catch(err => console.log('The Request has Failed', err))
     }
   })
 })
