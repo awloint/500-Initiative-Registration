@@ -8,8 +8,10 @@
  * @package  Registration
  * @author   Benson Imoh,ST <benson@stbensonimoh.com>
  * @license  GPL https://opensource.org/licenses/gpl-license
+ * @version  GIT: 1.0
  * @link     https://stbensonimoh.com
  */
-// error_reporting(E_ALL);
-// ini_set('display_errors', 1);
-echo json_encode($_POST);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+// echo json_encode($_POST);
+require './bootstrap.php';
