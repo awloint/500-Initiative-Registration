@@ -27,7 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
   M.CharacterCounter.init(count)
 
   const dob = document.querySelectorAll('.datepicker')
-  const dateInstance = M.Datepicker.init(dob)
+  const dateInstance = M.Datepicker.init(dob, {
+      yearRange: [1905,2001]
+  })
 
   //   Submit the form
   const form = document.querySelector('form')
