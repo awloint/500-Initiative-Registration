@@ -13,10 +13,6 @@
 
 spl_autoload_register(
     function ($className) {
-        $file = dirname(__DIR__) . '\\scripts\\' . $className . '.php';
-        $file = str_replace('\\', DIRECTORY_SEPARATOR, $file);
-        if (file_exists($file)) {
-            include $file;
-        }
+        include $className . '.php';
     }
 );

@@ -65,8 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       axios
         .post('scripts/processor.php', formdata)
         .then(response => {
-          console.log(response)
-          console.log(response.data)
+          window.location.href = response.data
         })
         .catch(err => console.log('The Request has Failed', err))
     }
