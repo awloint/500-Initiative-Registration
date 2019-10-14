@@ -46,10 +46,25 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(response.data)
         if (response.data === 'user_exists') {
           document.querySelector('#button').disabled = true
+          swal(
+            'Already Registered',
+            'You have already registered for the event.',
+            'warning'
+          )
+          setTimeout(() => {
+            window.location = 'https://awlo.org/500'
+          }, 3000)
         } else if (response.data === 'no_user') {
           console.log(response.data)
         } else {
-          window.location.href = response.data
+          swal(
+            'Form Already filled, payment remaining',
+            'You have already filled the form, all that is left is to pay. You will be redirected to the payment page in a few seconds.',
+            'warning'
+          )
+          setTimeout(() => {
+            window.location.href = response.data
+          }, 6000)
         }
       })
       .catch(err => console.log('The Request has Failed', err))
