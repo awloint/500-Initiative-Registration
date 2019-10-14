@@ -17,7 +17,11 @@ ini_set('display_errors', 1);
 
 require './bootstrap.php';
 
-// Send SMS Notification
-$SMS->send("AWLO-500", "This is the body of test SMS.", "+2348054610438");
+// // Send SMS Notification
+// $SMS->send("AWLO-500", "Dear {$firstName} {$lastName}, your registration was successful! We are super excited about this huge step you have taken by registering for the AWLO-500 Capacity Building Workshop. Kindly check your email for more details.", $phone);
 
 // Send Email
+// $mg->sendHTMLEmail("AWLO-500 Workshop <500@awlo.org>", $email, "AWLO-500 Capacity Building Workshop", $emailBody);
+
+// Insert user into the mailing list
+// $mg->insertIntoList($email, $fullName, $otherVariables);

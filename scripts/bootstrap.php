@@ -18,6 +18,9 @@ $config = include '../config.php';
 // autoload the classes
 require '../autoload.php';
 
+// Load Email
+// require './emails.php';
+
 //Instantiate the Database connection
 $db = new DB(
     $config['database']['host'],
@@ -39,3 +42,11 @@ $smstoken = $config['smstoken'];
 
 // Instantiate the SMS class
 $SMS = new SMS($smstoken);
+
+// Mailgun Credentials
+$apikey = $config['mailgun']['apikey'];
+$domain = $config['mailgun']['domain'];
+$list = $config['mailgun']['list_alias'];
+
+// Instantiate the Mailgun Class
+$mg = new Mailgun($apikey, $domain);
