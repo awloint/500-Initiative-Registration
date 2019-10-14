@@ -33,3 +33,9 @@ $raveKey = $config['ravepay']['public_key'];
 $prefix = "AWLO500-";
 $suffix = rand(1000000, 7000000);
 $transactionRef = $prefix.$suffix;
+
+// Bulk SMS Token
+$smstoken = $config['smstoken'];
+
+// Instantiate the SMS class
+$SMS = new SMS($smstoken);
