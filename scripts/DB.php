@@ -126,7 +126,7 @@ class DB
      */
     public function userExistsAndPaid($email, $tablename)
     {
-        $usercheck = "SELECT * FROM $tablename WHERE email=? AND paid='yes'";
+        $usercheck = "SELECT * FROM $tablename WHERE email=? AND paid='YES'";
         // prepare the Query
         $usercheckquery = $this->_conn->prepare($usercheck);
         // Execute the Query

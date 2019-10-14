@@ -31,5 +31,5 @@ $raveKey = $config['ravepay']['public_key'];
 
 // Transaction Reference
 $prefix = "AWLO500-";
-$suffix = rand(1000000,7000000);
+$suffix = rand(1000000, 7000000);
 $transactionRef = $prefix.$suffix;

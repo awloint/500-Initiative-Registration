@@ -28,7 +28,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const dob = document.querySelectorAll('.datepicker')
   const dateInstance = M.Datepicker.init(dob, {
-      yearRange: [1905,2001]
+    yearRange: [1905, 2001]
+  })
+
+  // Check if the user user already exists
+  const email = document.querySelector('#email')
+
+  email.addEventListener('change', e => {
+    const emailAddress = email.value
+    // console.log(emailAddress)
+    // send it for processing
+    axios
+      .post('scripts/usercheck.php', {
+        email: emailAddress
+      })
+      .then(response => {
+        console.log(response.data)
+        if (response.data === 'user_exists') {
+          document.querySelector('#button').disabled = true
+        } else if (response.data === 'no_user') {
+          console.log(response.data)
+        } else {
+          window.location.href = response.data
+        }
+      })
+      .catch(err => console.log('The Request has Failed', err))
   })
 
   //   Submit the form
