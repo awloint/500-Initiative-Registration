@@ -18,9 +18,6 @@ $config = include '../config.php';
 // autoload the classes
 require '../autoload.php';
 
-// Load Email
-require './emails.php';
-
 //Instantiate the Database connection
 $db = new DB(
     $config['database']['host'],

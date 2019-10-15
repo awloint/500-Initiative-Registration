@@ -79,6 +79,10 @@ if (isset($_GET['txref'])) {
 
             $otherVariables = json_encode($vars);
 
+            // Load Email
+            require './emails.php';
+
+
             //Give Value and return to Success page
             header('Location: ../success.html');
 
