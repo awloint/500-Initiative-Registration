@@ -62,6 +62,15 @@ class Mailgun
         curl_close($curl);
     }
 
+    /**
+     * Insert User into Mailgun Mailing list
+     *
+     * @param string $email          The User's Email
+     * @param string $fullName       The User's Full Name
+     * @param mixed  $otherVariables Other necessary Variables
+     *
+     * @return void
+     */
     public function insertIntoList($email, $fullName, $otherVariables)
     {
         $curl = curl_init();

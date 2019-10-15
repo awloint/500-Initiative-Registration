@@ -31,6 +31,7 @@ $db = new DB(
 
 // RavePay Key
 $raveKey = $config['ravepay']['public_key'];
+$raveSecKey = $config['ravepay']['secret_key'];
 
 // Transaction Reference
 $prefix = "AWLO500-";

@@ -52,7 +52,7 @@ $amount = 25000;
 if ($db->insertUser("awlo500reg", $details)) {
     // Run CURL
     $curl = curl_init();
-    $redirect_url = "https://awlo.org/500";
+    $redirect_url = "https://awlo.org/500/scripts/verify.php";
 
     curl_setopt_array(
         $curl, array(
