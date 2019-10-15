@@ -72,12 +72,6 @@ if (isset($_GET['txref'])) {
             }
 
             $fullName = $firstName . ' ' . $lastName;
-            $vars = [
-            'phone' =>  $phone,
-            'occupation' => $occupation
-            ];
-
-            $otherVariables = '{"phone": $phone, "occupation": $occupation}';
 
             // Load Email
             require './emails.php';
