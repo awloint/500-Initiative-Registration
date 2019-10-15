@@ -93,7 +93,7 @@ if (isset($_GET['txref'])) {
             $mg->sendHTMLEmail("AWLO-500 Workshop <500@awlo.org>", $email, "AWLO-500 Capacity Building Workshop", $emailBody);
 
             // Insert user into the mailing list
-            $mg->insertIntoList($email, $fullName, $otherVariables);
+            $mg->insertIntoList($email, $fullName);
         }
     } else {
         //Dont Give Value and return to Failure page

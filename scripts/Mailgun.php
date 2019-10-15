@@ -71,14 +71,13 @@ class Mailgun
      *
      * @return void
      */
-    public function insertIntoList($email, $fullName, $otherVariables)
+    public function insertIntoList($email, $fullName)
     {
         $curl = curl_init();
         $curl_post_data=array(
         'subscribed'    => true,
         'address'      => $email,
-        'name' => $fullName,
-        'vars'    => $otherVariables
+        'name' => $fullName
         );
 
         $service_url = 'https://api.mailgun.net/v3/lists/' . $list . '@' . $this->domain . '/members';
