@@ -35,7 +35,7 @@ if ($db->userExists($email, "awlo500reg")) {
 
         // Run CURL
         $curl = curl_init();
-        $redirect_url = "https://awlo.org/500/scripts/verify.php";
+        $redirect_url = "https://awlo.org/500/register/scripts/verify.php";
 
         curl_setopt_array(
             $curl,
