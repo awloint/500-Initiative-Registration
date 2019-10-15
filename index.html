@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102053987-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-102053987-1');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="description" content="AWLO-500 Capacity Building Workshop. A Capacity Building Workshop for Women.">
+    <meta name="keywords" content="Capacity Building for Women, Capacity Building, Capacity, Workshop, AWLC, AWLO, Conference, Women in Africa Conference, African Women in Leadership Conference">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>500-Initiative Registration</title>
+    <!-- Load Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <!-- Load intl-tel-input -->
+    <link rel="stylesheet" href="styles/intlTelInput.min.css">
+    <script src="scripts/intlTelInput.min.js"></script>
+    <!--import google fonts-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Oswald|Roboto&display=swap" rel="stylesheet">
+    <!-- import font awesome -->
+    <script src="https://kit.fontawesome.com/b6bcbbd62f.js" crossorigin="anonymous"></script>
+    <!--import materialize css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Load sweetalert.js -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Logo begins here -->
+        <div class="center-align logo-bg top-margin">
+            <p class="text-center animated tada infinite">
+                <img src="https://awlo.org/womendecide/images/AWLO%20LOGO%20small.png" alt="AWLO Logo" id="logo">
+            </p>
+            <p class="font Fjalla One">
+                REGISTRATION FORM
+            </p>
+        </div>
+        <form class="padding-bottom padding-top" id="form">
+            <div class="row">
+                <div class="input-field col s12 m12 l4">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="firstName" type="text" class="validate initialCaps" name="firstName" required>
+                    <label for="firstName">Your First Name</label>
+                    <span class="helper-text" data-error="Oops! Please provide a name."
+                        data-success="Yeah! Looks good."></span>
+                </div>
+                <div class="input-field col s12 m12 l4">
+                    <input id="middleName" type="text" class="validate initialCaps" name="middleName" required>
+                    <label for="middleName">Your Middle Name</label>
+                    <span class="helper-text" data-error="Oops! Please provide a name."
+                        data-success="Yeah! Looks good."></span>
+                </div>
+                <div class="input-field col s12 m12 l4">
+                    <input id="lastName" type="text" class="validate initialCaps" name="lastName" required>
+                    <label for="lastName">Your Last Name</label>
+                    <span class="helper-text" data-error="Ooops! Please provide a name."
+                        data-success="Yeah! Looks good."></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix">email</i>
+                    <input id="email" type="email" class="validate lowerCase" name="email" required>
+                    <label for="email">Your Email</label>
+                    <span class="helper-text" data-error="Please provide a valid email address."
+                        data-success="Great! You're good to go."></span>
+                </div>
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix">phone</i>
+                    <input type="tel" class="validate" id="phone" name="phone" required>
+                    <span class="helper-text" data-error="Please provide a valid phone number."
+                        data-success="Great! You're good to go."></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 l12">
+                    <i class="material-icons prefix">location_on</i>
+                    <input type="text" id="location" name="location" required>
+                    <label for="address">Location</label>
+                    <span class="helper-text" data-error="Please provide a valid address."
+                        data-success="Great! You're good to go."></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m12 l6">
+                    <i class="material-icons prefix">date_range</i>
+                    <label for="dateOfBirth">Date of Birth</label>
+                    <input type="text" class="datepicker validate" name="dateOfBirth" required>
+                    <span class="helper-text" data-error="Please provide your correct Date of Birth."
+                        data-success="Great! You're good to go."></span>
+                </div>
+                <div class="input-field col s12 m12 l6">
+                    <input id="occupation" type="text" class="validate initialCaps" name="occupation" required>
+                    <label for="occupation">Occupation</label>
+                    <span class="helper-text" data-error="This will help us know you better."
+                        data-success="Great! You're good to go."></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m12 l12"> Do you own a business or work for an organisation?
+                    <div class="switch">
+                        <label>
+                            No
+                            <input type="checkbox" name="ownOrWorkForAnOrganisation" class="validate" value="yes">
+                            <span class="lever"></span>
+                            Yes
+                        </label>
+                        <span class="helper-text" data-error="This will help us know you better."
+                            data-success="Great! You're good to go."></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                    <i class="material-icons prefix">business</i>
+                    <input id="organisationName" type="text" class="validate initialCaps" name="organisationName">
+                    <label for="organisationName">If yes, please input the organization's name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m12 l12">Would you like AWLO to help you manage your travel booking and
+                    accommodation?
+                    <div class="switch">
+                        <label>
+                            No
+                            <input type="checkbox" name="manageMyTravel" class="validate" value="yes">
+                            <span class="lever"></span>
+                            Yes
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row center-align">
+                <button class="btn btn-large waves-effect waves-light top-margin bottom-margin" type="submit"
+                    name="action" id="button">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="row center-align">
+        <div class="col s12 bottom-margin">
+            <p class="text-center">
+                &copy; <span id="year"></span> African Women in Leadership Organization</p>
+            <small class="form-text text-muted text-center animated swing infinite slower bottom-margin">Designed
+                and
+                Developed by
+                <a href="https://stbensonimoh.com/about" target="_blank">Benson Imoh,ST</a> and
+                <a href="https://etinyeneuko.com" target="_blank">Etinyene Uko</a>
+            </small>
+        </div>
+    </div>
+    <!-- google places api call -->
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAtHHrt3-wniazc8Rjt1SL90v91UMnfE4&amp;libraries=places">
+        </script>
+    <!--import materialize js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- use Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- main js -->
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
