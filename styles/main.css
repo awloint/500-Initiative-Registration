@@ -186,3 +186,7 @@ select[required] {
  .material-icons.active {
   color: #f10f11 !important;
   }
+
+  .input-field label{
+    pointer-events: all !important;
+}
