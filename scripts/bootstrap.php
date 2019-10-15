@@ -19,7 +19,7 @@ $config = include '../config.php';
 require '../autoload.php';
 
 // Load Email
-// require './emails.php';
+require './emails.php';
 
 //Instantiate the Database connection
 $db = new DB(
