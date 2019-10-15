@@ -77,7 +77,7 @@ if (isset($_GET['txref'])) {
             'occupation' => $occupation
             ];
 
-            $otherVariables = json_encode($vars);
+            $otherVariables = '{"phone": "$phone", "occupation": "$occupation"}';
 
             // Load Email
             require './emails.php';
