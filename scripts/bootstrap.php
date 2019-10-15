@@ -47,4 +47,4 @@ $domain = $config['mailgun']['domain'];
 $list = $config['mailgun']['list_alias'];
 
 // Instantiate the Mailgun Class
-$mg = new Mailgun($apikey, $domain);
+$mg = new Mailgun($apikey, $domain, $list);

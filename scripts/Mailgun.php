@@ -12,16 +12,18 @@
  */
 class Mailgun
 {
+    public $list;
     /**
      * Constructor Function
      *
      * @param string $apikey Mailgun Private API Key
      * @param string $domain Your Domain
      */
-    public function __construct($apikey, $domain)
+    public function __construct($apikey, $domain, $list)
     {
         $this->apikey = $apikey;
         $this->domain = $domain;
+        $this->list = $list;
     }
 
     /**
@@ -71,16 +73,17 @@ class Mailgun
      *
      * @return void
      */
-    public function insertIntoList($email, $fullName)
+    public function insertIntoList($email, $fullName, $otherVariables)
     {
         $curl = curl_init();
         $curl_post_data=array(
         'subscribed'    => true,
         'address'      => $email,
-        'name' => $fullName
+        'name' => $fullName,
+        'vars'  => $otherVariables
         );
 
-        $service_url = 'https://api.mailgun.net/v3/lists/' . $list . '@' . $this->domain . '/members';
+        $service_url = 'https://api.mailgun.net/v3/lists/' . $this->list . '@' . $this->domain . '/members';
         $curl = curl_init($service_url);
         curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
         curl_setopt($curl, CURLOPT_USERPWD, "api:$this->apikey");

@@ -73,9 +73,15 @@ if (isset($_GET['txref'])) {
 
             $fullName = $firstName . ' ' . $lastName;
 
+            $vars = [
+                'phone' => $phone,
+                'occupation' => $occupation
+                ];
+
+            $otherVariables = json_encode($vars);
+
             // Load Email
             require './emails.php';
-
 
             //Give Value and return to Success page
             header('Location: ../success.html');
@@ -87,7 +93,7 @@ if (isset($_GET['txref'])) {
             $mg->sendHTMLEmail("AWLO-500 Workshop <500@awlo.org>", $email, "AWLO-500 Capacity Building Workshop", $emailBody);
 
             // Insert user into the mailing list
-            $mg->insertIntoList($email, $fullName);
+            $mg->insertIntoList($email, $fullName, $otherVariables);
         }
     } else {
         //Dont Give Value and return to Failure page
