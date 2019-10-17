@@ -11,8 +11,8 @@
  * @version  GIT: 1.0
  * @link     https://stbensonimoh.com
  */
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 $_POST = json_decode(file_get_contents("php://input"), true);
 
 require './bootstrap.php';
