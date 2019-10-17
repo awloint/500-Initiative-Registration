@@ -97,6 +97,7 @@ if (isset($_GET['txref'])) {
         }
     } else {
         //Dont Give Value and return to Failure page
+        header('Location: https://awlo.org/500')
     }
 } else {
     die('No reference supplied');
