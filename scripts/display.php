@@ -23,7 +23,7 @@ $referrer = $_POST['referrer'];
 if ($referrer === 'https://awlo.org/500/register/dashboard.html') {
     $registeredusers = $db->query("SELECT id, firstName, middleName, lastName, email, phone, location, occupation, organisationName, referrer, created_at, paid, paid_at FROM awlo500reg");
 } else {
-    $registeredusers = $db->query("SELECT id, firstName, middleName, lastName, email, phone, location, occupation, organisationName, referrer, created_at, paid, paid_at FROM awlo500reg WHERE referrer='{$referrer}' AND paid='yes'");
+    $registeredusers = $db->query("SELECT id, firstName, middleName, lastName, email, phone, location, occupation, organisationName, referrer, created_at, paid, paid_at FROM awlo500reg WHERE referrer='{$referrer}'");
 }
 $data = $registeredusers->fetchAll();
 echo json_encode($data);
