@@ -10,48 +10,45 @@ document.addEventListener('DOMContentLoaded', e => {
     window.location.href.indexOf('?') + 1
   )
 
-  let formdata = JSON.stringify({ referrer: referrer })
+
+  let formdata = referrer
 
   // initiate a fetch call
   axios
-    .post('scripts/display.php', formdata)
-    .then(data => {
-      console.log(data)
-    //   for (var i = 0; i < data.length; i++) {
-    //     $('#data').append(
-    //       '<tr><td>' +
-    //         data[i].id +
-    //         '</td><td>' +
-    //         data[i].firstName +
-    //         '</td><td>' +
-    //         data[i].lastName +
-    //         '</td><td>' +
-    //         data[i].email +
-    //         '</td><td>' +
-    //         data[i].phone +
-    //         '</td><td>' +
-    //         data[i].country +
-    //         '</td><td>' +
-    //         data[i].occupation +
-    //         '</td><td>' +
-    //         data[i].organisation +
-    //         '</td><td>' +
-    //         data[i].member +
-    //         '</td><td>' +
-    //         data[i].referringChannel +
-    //         '</td><td>' +
-    //         data[i].firstConference +
-    //         '</td><td>' +
-    //         data[i].referrer +
-    //         '</td><td>' +
-    //         data[i].created_at +
-    //         '</td><td>' +
-    //         data[i].paid +
-    //         '</td><td>' +
-    //         data[i].paid_at +
-    //         '</td></tr>'
-    //     )
-    //   }
+    .post('scripts/display.php', { referrer: formdata })
+    .then(response => {
+        // console.log(response.data)
+      for (var i = 0; i < response.data.length; i++) {
+        $('#data').append(
+          '<tr><td>' +
+            response.data[i].id +
+            '</td><td>' +
+            response.data[i].firstName +
+            '</td><td>' +
+            response.data[i].middleName +
+            '</td><td>' +
+            response.data[i].lastName +
+            '</td><td>' +
+            response.data[i].email +
+            '</td><td>' +
+            response.data[i].phone +
+            '</td><td>' +
+            response.data[i].location +
+            '</td><td>' +
+            response.data[i].occupation +
+            '</td><td>' +
+            response.data[i].organisationName +
+            '</td><td>' +
+            response.data[i].referrer +
+            '</td><td>' +
+            response.data[i].created_at +
+            '</td><td>' +
+            response.data[i].paid +
+            '</td><td>' +
+            response.data[i].paid_at +
+            '</td></tr>'
+        )
+      }
     })
     .catch(error => {
       console.log('The Request Failed', error)
