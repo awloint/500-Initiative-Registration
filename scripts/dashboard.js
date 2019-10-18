@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', e => {
     window.location.href.indexOf('?') + 1
   )
 
-
   let formdata = referrer
 
   // initiate a fetch call
