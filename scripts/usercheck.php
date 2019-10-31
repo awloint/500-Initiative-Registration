@@ -31,7 +31,7 @@ if ($db->userExists($email, "awlo500reg")) {
         foreach ($result as $key => $value) {
             ${$key} = $value;
         }
-        $amount = 25000;
+        $amount = 15000;
 
         // Run CURL
         $curl = curl_init();
