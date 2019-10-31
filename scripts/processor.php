@@ -47,7 +47,7 @@ $details = [
 ];
 
 // Amount to be collected from the user
-$amount = 25000;
+$amount = 15000;
 
 if ($db->insertUser("awlo500reg", $details)) {
     // Run CURL
