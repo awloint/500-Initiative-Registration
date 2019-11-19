@@ -54,17 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
           setTimeout(() => {
             window.location = 'https://awlo.org/500'
           }, 3000)
-        } else if (response.data === 'no_user') {
-          console.log(response.data)
-        } else {
-          swal(
-            'Form Already filled, payment remaining',
-            'You have already filled the form, all that is left is to pay. You will be redirected to the payment page in a few seconds.',
-            'warning'
-          )
-          setTimeout(() => {
-            window.location.href = response.data
-          }, 6000)
         }
       })
       .catch(err => console.log('The Request has Failed', err))
@@ -106,7 +95,16 @@ document.addEventListener('DOMContentLoaded', () => {
       axios
         .post('scripts/processor.php', formdata)
         .then(response => {
-          window.location.href = response.data
+          if (response.data === 'success') {
+            swal(
+              'Registration Successful!',
+              'Your registration was successful.',
+              'success'
+            )
+            setTimeout(() => {
+              window.location = 'https://awlo.org/500'
+            }, 4000)
+          }
         })
         .catch(err => console.log('The Request has Failed', err))
     }
