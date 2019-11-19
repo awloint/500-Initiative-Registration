@@ -19,7 +19,7 @@ require './bootstrap.php';
 
 if (isset($_GET['txref'])) {
     $ref = $_GET['txref'];
-    $amount = 25000;
+    $amount = 15000;
     $currency = 'NGN';
     $query = array(
         "SECKEY"    => $raveSecKey,
